@@ -1,0 +1,142 @@
+body, html{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(37, 54, 73);
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    background-color: white;
+    width: 400px;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+}
+
+.container .sidebar{
+    height: 100%;
+    float: right;
+    background-color: gray;
+    animation: resizeSidebar 2s ease-in-out infinite;
+}
+
+.container .clicker {
+    font-size: 50px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: moveCursor 2s ease-in-out infinite;
+}
+
+.container .multi {
+    height: 10%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 0%;
+    background-color: gray;
+}
+
+.container .multi .cons{
+    width: 20%;
+    height: 100%;
+    
+}
+
+.container .multi .cons:nth-child(1){
+    background-color: skyblue;
+    border-radius: 10px;
+    animation: resizeMulti 2s ease-in-out infinite;
+}
+
+.container .multi-clicker{
+    font-size: 50px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    animation: moveMultiCursor 2s ease-in-out infinite;
+}
+
+.container .overlay{
+    height: 100%;
+    background-color: gray;
+    position: absolute;
+    
+    animation: slideOverlay 2s ease-in-out infinite;
+}
+
+@keyframes slideOverlay{
+    0%, 40%, 50% {
+        width: 0%;
+    }
+    80%, 90%, 100%  {
+        width: 100%;
+    }
+}
+
+@keyframes moveMultiCursor{
+    0%, 40% {
+        left: 50%;
+        transform: translate(-50%) scale(1);
+    }
+    40% {
+        top: 92%;
+        left: 12%;
+        transform: translate(-50%) scale(1);
+    }
+    50% {
+        top: 92%;
+        left: 12%;
+        transform: translate(-50%) scale(0.8);
+    }
+    80%, 90%, 100% {
+        top: 92%;
+        left: 12%;
+        transform: translate(-50%) scale(1);
+    }
+}
+
+@keyframes moveCursor {
+    0%, 40% {
+        left: 50%;
+        transform: translateX(-50%) scale(1);
+    }
+    40% {
+        left: 90%;
+        transform: translateX(-50%) scale(1);
+    }
+    50% {
+        left: 90%;
+        transform: translateX(-50%) scale(0.8);
+    }
+    80%, 90%, 100% {
+        left: 90%;
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+@keyframes resizeSidebar {
+    0%, 40%, 50% {
+        width: 70px;
+    }
+    80%, 90%, 100% {
+        width: 300px;
+    }
+}
+
+@keyframes resizeMulti {
+    0%, 40%, 50% {
+        transform: scale(1);
+    }
+    80% {
+        transform: scale(.8);
+    }
+    90%, 100% {
+        transform: scale(1);
+    }
+}
