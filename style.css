@@ -21,6 +21,19 @@ body, html{
     float: right;
     background-color: gray;
     animation: resizeSidebar 2s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    gap: 10px;
+}
+
+.container .sidebar .sidebar-cons{
+    width: 90%;
+    height: 30%;
+    border-radius: 5px;
+    background-color: rgb(182, 182, 182);
+    animation: visible 2s ease-in-out infinite;
 }
 
 .container .clicker {
@@ -39,17 +52,16 @@ body, html{
     justify-content: center;
     bottom: 0%;
     background-color: gray;
+    border-radius: 10px 10px 0 0;
 }
 
 .container .multi .cons{
     width: 20%;
     height: 100%;
-    
 }
 
 .container .multi .cons:nth-child(1){
-    background-color: skyblue;
-    border-radius: 10px;
+    border-radius: 10px 0 0 0;
     animation: resizeMulti 2s ease-in-out infinite;
 }
 
@@ -64,11 +76,24 @@ body, html{
 
 .container .overlay{
     height: 100%;
-    background-color: gray;
+    background-color: rgb(201, 201, 201);
     position: absolute;
-    
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    gap: 10px;
     animation: slideOverlay 2s ease-in-out infinite;
 }
+
+.container .overlay .overlay-cons{
+    height: 30%;
+    width: 100%;
+    background-color: rgb(182, 182, 182);
+    animation: visible 2s ease-in-out infinite;
+}
+
 
 @keyframes slideOverlay{
     0%, 40%, 50% {
@@ -107,36 +132,54 @@ body, html{
         transform: translateX(-50%) scale(1);
     }
     40% {
-        left: 90%;
+        left: 95%;
         transform: translateX(-50%) scale(1);
     }
     50% {
-        left: 90%;
+        left: 95%;
         transform: translateX(-50%) scale(0.8);
     }
     80%, 90%, 100% {
-        left: 90%;
+        left: 95%;
         transform: translateX(-50%) scale(1);
     }
 }
 
 @keyframes resizeSidebar {
     0%, 40%, 50% {
-        width: 70px;
+        width: 15%;
     }
     80%, 90%, 100% {
-        width: 300px;
+        width: 80%;
+    }
+}
+
+@keyframes visible {
+    0%, 40%, 50% {
+        opacity: 0;
+    }
+    70% {
+        opacity: .2;
+    }
+    80% {
+        opacity: .5;
+    }
+    90%, 100% {
+        opacity: 1;
     }
 }
 
 @keyframes resizeMulti {
     0%, 40%, 50% {
+        background-color: gray;
         transform: scale(1);
     }
-    80% {
+    60% {
+        background-color: rgba(127, 208, 240, .6);
         transform: scale(.8);
     }
     90%, 100% {
+        background-color: gray;
         transform: scale(1);
     }
 }
