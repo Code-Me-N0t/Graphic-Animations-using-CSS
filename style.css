@@ -14,6 +14,7 @@ body, html{
     height: 600px;
     position: relative;
     overflow: hidden;
+    animation: darken 2s ease-in-out infinite;
 }
 
 .container .sidebar{
@@ -94,7 +95,6 @@ body, html{
     animation: visible 2s ease-in-out infinite;
 }
 
-
 @keyframes slideOverlay{
     0%, 40%, 50% {
         width: 0%;
@@ -166,6 +166,21 @@ body, html{
     }
     90%, 100% {
         opacity: 1;
+    }
+}
+
+@keyframes darken {
+    0%, 40%, 50% {
+        background-color: rgba(255, 255, 255, 1);
+    }
+    70% {
+        background-color: rgb(131, 131, 131);
+    }
+    80% {
+        background-color: rgb(68, 68, 68);
+    }
+    90%, 100% {
+        background-color: rgb(68, 68, 68);
     }
 }
 
